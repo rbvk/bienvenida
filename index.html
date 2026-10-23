@@ -192,6 +192,32 @@ Esta página pública no valida pagos, no muestra datos de pacientes ni recibe c
 #rvPostCompraV3 .status p.confirmed-copy{font-size:clamp(18px,1.75vw,19px);line-height:1.65;color:var(--ink);font-weight:500}
 #rvPostCompraV3 .where p.amenities-note{font-size:16px;line-height:1.6;color:var(--ink);background:#EFF5ED;border:1px solid #DDE8DC;border-radius:12px;padding:12px 14px;margin:5px 0 1px}
 #rvPostCompraV3 .amenities-note strong{color:var(--deep)}
+
+/* v5 · invitación selectiva a la identidad y los recursos de Rodolfo Valle */
+#rvPostCompraV3 .rv-discover{margin:6px 0 22px;display:grid;grid-template-columns:1.16fr 1fr;gap:16px}
+#rvPostCompraV3 .rv-discover article{min-width:0;border:1px solid #D6E3D7;border-radius:20px;background:#FFFEFC;box-shadow:0 9px 24px rgba(33,70,49,.035);padding:clamp(19px,2.5vw,27px)}
+#rvPostCompraV3 .rv-discover .rv-discover-kicker{font-weight:800;letter-spacing:.1em;font-size:11px;text-transform:uppercase;color:#46755E;margin:0 0 9px}
+#rvPostCompraV3 .rv-discover h2{font-size:clamp(22px,2.25vw,27px);line-height:1.2;margin:0 0 10px;letter-spacing:-.035em}
+#rvPostCompraV3 .rv-discover p{font-size:15.5px;line-height:1.64;color:#4D6657;margin:0 0 17px}
+#rvPostCompraV3 .rv-about{background:linear-gradient(135deg,#EEF5ED 0%,#F9FAF5 84%)!important;display:flex;gap:19px;align-items:center}
+#rvPostCompraV3 .rv-portrait{flex:none;position:relative;width:125px;height:160px;border-radius:16px;border:2px solid #D8E7DB;overflow:hidden;background:linear-gradient(145deg,#336F57,#214C3E);display:grid;place-items:center}
+#rvPostCompraV3 .rv-portrait-fallback{font-family:Georgia,serif;font-size:49px;font-weight:700;color:#FFF;letter-spacing:-.09em;line-height:1}
+#rvPostCompraV3 .rv-portrait-fallback span{color:#B7D4BD}
+#rvPostCompraV3 .rv-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+#rvPostCompraV3 .rv-about-copy{min-width:0;flex:1}
+#rvPostCompraV3 .rv-discover .rv-discover-link{display:inline-flex;gap:9px;align-items:center;justify-content:center;min-height:44px;background:#275C4D;color:#fff;text-decoration:none;padding:10px 17px;border-radius:999px;font-size:14.5px;font-weight:760;line-height:1.25;max-width:100%}
+#rvPostCompraV3 .rv-discover .rv-discover-link:hover{background:#194838;color:#fff}
+#rvPostCompraV3 .rv-resource-options{display:grid;gap:10px;margin-top:12px}
+#rvPostCompraV3 .rv-resource-options a{display:block;border:1px solid #D6E3D7;border-radius:13px;background:#F4F8F2;padding:12px 14px;text-decoration:none;color:#214D3D;min-height:48px}
+#rvPostCompraV3 .rv-resource-options a:hover{background:#E8F2E8}
+#rvPostCompraV3 .rv-resource-options a strong{display:block;font-size:15px;line-height:1.35}
+#rvPostCompraV3 .rv-resource-options a small{display:block;font-size:12.5px;color:#567060;line-height:1.4;margin-top:2px}
+#rvPostCompraV3 .rv-discover .rv-unpressured{font-size:12.5px;color:#617768;margin:12px 0 0}
+#rvPostCompraV3 .footer .rv-footer-home{font-weight:780;text-decoration:underline;text-underline-offset:3px;color:var(--deep);font-size:14px}
+#rvPostCompraV3 .rv-discover a:focus-visible,#rvPostCompraV3 .rv-footer-home:focus-visible{outline:3px solid #275C4D;outline-offset:4px}
+@media(max-width:800px){#rvPostCompraV3 .rv-discover{grid-template-columns:1fr}}
+@media(max-width:460px){#rvPostCompraV3 .rv-discover{gap:12px;margin:2px 0 16px}#rvPostCompraV3 .rv-discover article{padding:17px;border-radius:17px}#rvPostCompraV3 .rv-about{gap:14px}#rvPostCompraV3 .rv-portrait{width:82px;height:116px;border-radius:11px}#rvPostCompraV3 .rv-portrait-fallback{font-size:34px}#rvPostCompraV3 .rv-discover h2{font-size:21px}#rvPostCompraV3 .rv-discover p{font-size:15px;line-height:1.55}#rvPostCompraV3 .rv-discover .rv-discover-link{font-size:13.5px;padding:11px 13px}#rvPostCompraV3 .rv-discover .rv-discover-kicker{font-size:10px}}
+@media(max-width:345px){#rvPostCompraV3 .rv-about{align-items:flex-start}#rvPostCompraV3 .rv-portrait{width:60px;height:91px}#rvPostCompraV3 .rv-portrait-fallback{font-size:27px}#rvPostCompraV3 .rv-discover h2{font-size:19px}}
 </style>
 <section id="rvPostCompraV3" aria-label="Bienvenida a la primera sesión presencial">
  <div class="wrap">
@@ -233,8 +259,32 @@ Esta página pública no valida pagos, no muestra datos de pacientes ni recibe c
     <details id="rvpc-reminders"><summary>⏰ Añadir un recordatorio personal</summary><div class="detail-content"><p>Introduce la fecha y hora que la coordinadora de Casa PsicoPro te confirmó por WhatsApp. Se descargará un archivo de calendario con recordatorios previstos para 24 horas y 2 horas antes. Tu aplicación de calendario controla si esos avisos se muestran.</p>
       <form class="manual-calendar" id="rvpc-manual-form"><div class="manual-calendar-grid"><label for="rvpc-manual-date">Fecha confirmada<input id="rvpc-manual-date" type="date" required></label><label for="rvpc-manual-time">Hora confirmada (Arica, Chile)<input id="rvpc-manual-time" type="time" required></label></div><button class="action primary" type="submit">📅 Crear recordatorio</button><p id="rvpc-manual-feedback" class="feedback" role="status" aria-live="polite"></p><p>El evento se guarda como «Cita personal» por privacidad. No modifica la reserva ni envía datos a la consulta.</p></form></div></details>
   </section>
+  <section class="rv-discover" id="rvpc-explore" aria-label="Conoce al profesional y sus recursos gratuitos">
+    <article class="rv-about" aria-labelledby="rvpc-about-title">
+      <div class="rv-portrait" aria-label="Imagen de presentación del sitio profesional">
+        <div class="rv-portrait-fallback" aria-hidden="true">RV<span>.</span></div>
+        <img loading="lazy" decoding="async" width="125" height="160" src="https://rodolfovalle.com/assets/images/image02.jpg?v=f7895e0e" alt="Imagen de presentación de rodolfovalle.com" onerror="this.style.display='none'">
+      </div>
+      <div class="rv-about-copy">
+        <div class="rv-discover-kicker">👤 Conoce a tu psicólogo</div>
+        <h2 id="rvpc-about-title">Un poco más sobre quien te acompañará.</h2>
+        <p>Soy Rodolfo Valle, psicólogo clínico en Arica. Si te interesa, puedes conocer mi trayectoria y mi forma de comprender el trabajo terapéutico.</p>
+        <a class="rv-discover-link" href="https://rodolfovalle.com/" target="_blank" rel="noopener noreferrer">👤 Conoce más sobre mí <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+    <article class="rv-resources" aria-labelledby="rvpc-resources-title">
+      <div class="rv-discover-kicker">📚 Recursos de Rodolfo Valle</div>
+      <h2 id="rvpc-resources-title">Explora a tu ritmo.</h2>
+      <p>Si quieres conocer más antes de nuestra sesión, en mi web encontrarás materiales gratuitos; no son tareas ni requisitos para la consulta.</p>
+      <div class="rv-resource-options">
+        <a href="https://rodolfovalle.com/#atlas" target="_blank" rel="noopener noreferrer"><strong>🎨 Atlas de emociones <span aria-hidden="true">↗</span></strong><small>Un recurso visual para explorar el lenguaje emocional.</small></a>
+        <a href="https://rodolfovalle.com/" target="_blank" rel="noopener noreferrer"><strong>📘 Antes de ir al psicólogo <span aria-hidden="true">↗</span></strong><small>Encuentra esta guía gratuita en Menú → Recursos de mi sitio.</small></a>
+      </div>
+      <p class="rv-unpressured">Estos recursos son completamente opcionales.</p>
+    </article>
+  </section>
   <section class="contact" aria-labelledby="rvpc-contact"><div><h2 id="rvpc-contact">💬 ¿Necesitas consultar algo?</h2><p>La coordinadora de Casa PsicoPro puede ayudarte con la ubicación, el horario y las reprogramaciones. No necesitas explicar tu motivo de consulta por WhatsApp.</p></div><a class="action" href="https://wa.me/56997391637?text=Hola%2C%20ya%20tengo%20mi%20hora%20confirmada%20y%20necesito%20una%20consulta%20administrativa." target="_blank" rel="noopener noreferrer">💬 Escribir a la coordinadora</a></section>
-  <footer class="footer"><div class="footer-brand"><a class="footer-wordmark" href="https://rodolfovalle.com/">Rodolfo Valle<span>.</span></a><p>Psicología clínica · Arica · Registro N.º 650149</p><small>No necesitas tener todo claro para empezar.</small></div><div class="footer-links"><a href="https://rodolfovalle.com/">Sitio principal ↗</a><span>© 2026 Rodolfo Valle</span></div></footer>
+  <footer class="footer"><div class="footer-brand"><strong class="footer-wordmark">Rodolfo Valle<span>.</span></strong><p>Psicólogo clínico · Arica · Registro N.º 650149</p><small>No necesitas tener todo claro para empezar.</small></div><div class="footer-links"><a class="rv-footer-home" href="https://rodolfovalle.com/" target="_blank" rel="noopener noreferrer">🌐 Conoce mi sitio profesional ↗</a><span>© 2026 Rodolfo Valle</span></div></footer>
  </div>
 </section>
 <script>
